@@ -70,10 +70,10 @@ ENV PAPER_ARGS=""
 #################
 ### Libraries ###
 #################
-ADD https://bootstrap.pypa.io/get-pip.py .
-RUN python get-pip.py
-
-RUN pip install mcstatus
+RUN apt-get update && \
+    apt-get upgrade && \
+    apt-get -y install python3-pip 
+RUN pip3 install mcstatus
 
 ###################
 ### Healthcheck ###
